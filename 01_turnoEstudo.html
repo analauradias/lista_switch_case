@@ -12,7 +12,19 @@
     */
 
     //ENTRADA
-    
+    let turno = prompt(`Insira o turno que você estuda. Responda com M-matutino, V-Vespertino ou N-Noturno`).trim().toLowerCase();
+
+    switch (turno) {
+        case 'm':
+            document.write("Bom dia!")
+            break;
+        case 'v':
+        document.write("Boa tarde!")
+            break;
+        case 'n':
+        document.write("Boa noite!")
+            break;
+    }
     
     //PROCESSAMENTO
 
