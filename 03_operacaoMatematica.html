@@ -8,9 +8,32 @@
     */
 
     //ENTRADA
-
-
+    let numero1 = Number(prompt(`Insira um número`).trim().replace(",","."));
+    let numero2 = Number(prompt(`Insira mais um número`).trim().replace(",","."));
+    let operacao = prompt(`Qual operação você deseja realizar? Responda com A-adição, S-subtração, D-divisão ou M-multiplicação`).trim();
     //PROCESSAMENTO
+
+    switch (operacao) {
+        case 'a':
+            adicao = numero1+numero2;
+            imaparPar = (adicao%2)==0 ? 'par' : 'ímpar';
+          document.write(Resultado: ${adicao})
+          
+            break;
+        case 's':
+            alert(`Resultado: ${numero1 - numero2}`)
+            break;
+        case 'd':
+            alert(`Resultado: ${numero1 / numero2}`)
+            break;
+        case 'm':
+            alert(`Resultado: ${numero1 * numero2}`)
+            break;
+        default:
+            alert(`Comando inválido!`)
+            break;
+    }
+
 
     
     //SAÍDA

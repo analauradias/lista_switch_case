@@ -5,9 +5,20 @@
     */
 
     //ENTRADA
-
+    let numero = Number(prompt(`Insira um número inteiro`).trim());
+    const resto = numero % 2;
     
     //PROCESSAMENTO
+    switch (resto) {
+        case 0:
+            alert(`par`);
+            break;
+    
+        default:
+            alert(`ímpar`)
+            break;
+    }
+    
 
     
     //SAÍDA
