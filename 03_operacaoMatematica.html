@@ -10,30 +10,58 @@
     //ENTRADA
     let numero1 = Number(prompt(`Insira um número`).trim().replace(",","."));
     let numero2 = Number(prompt(`Insira mais um número`).trim().replace(",","."));
-    let operacao = prompt(`Qual operação você deseja realizar? Responda com A-adição, S-subtração, D-divisão ou M-multiplicação`).trim();
+    let operacao = prompt(`Qual operação você deseja realizar? Responda com A-adição, S-subtração, D-divisão ou M-multiplicação`).trim().toLowerCase();
     //PROCESSAMENTO
 
-    switch (operacao) {
+    let conta
+    let mensagemFinal = ``
+    switch (operacao){
         case 'a':
-            adicao = numero1+numero2;
-            imaparPar = (adicao%2)==0 ? 'par' : 'ímpar';
-          document.write(Resultado: ${adicao})
-          
+            conta = numero1 + numero2;
             break;
         case 's':
-            alert(`Resultado: ${numero1 - numero2}`)
-            break;
-        case 'd':
-            alert(`Resultado: ${numero1 / numero2}`)
+            conta = numero1 - numero2;
             break;
         case 'm':
-            alert(`Resultado: ${numero1 * numero2}`)
+            conta = numero1 * numero2;
             break;
-        default:
-            alert(`Comando inválido!`)
+        case 'd':
+            conta = numero1 / numero2;
+            break;
+        default :
+            alert(`Valor Inválido.`);
             break;
     }
-
+    mensagemFinal = `${conta}`
+    switch (conta%2) {
+        case 0:
+            mensagemFinal += `, esse número é par,`;
+            break;
+    
+        default:
+            mensagemFinal += `, esse número é ímpar,`;
+            break;
+    }
+    switch (conta > 0) {
+        case true:
+            mensagemFinal += ` positivo e `;
+            break;
+    
+        default:
+            mensagemFinal += ` negativo e `;
+            break;
+    }
+    switch (Number.isInteger(conta)) {
+        case true:
+            mensagemFinal += `inteiro.`;
+            break;
+    
+        default:
+            mensagemFinal += `decimal.`;
+            break;
+    }
+    alert(mensagemFinal)
+        
 
     
     //SAÍDA
